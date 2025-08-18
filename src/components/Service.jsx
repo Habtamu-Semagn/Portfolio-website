@@ -4,7 +4,7 @@ import DesignServicesIcon from "@mui/icons-material/DesignServices";
 import CodeIcon from "@mui/icons-material/Code";
 function Service() {
   return (
-    <div className="px-10 md:px-20 xl:px-30 py-20 bg-slate-800">
+    <div id="service" className="px-10 md:px-20 xl:px-30 py-20 bg-slate-800">
       <h1 className="text-slate-500 text-xl flex gap-7">
         <span>||</span> <span>My Services</span>{" "}
       </h1>

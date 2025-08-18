@@ -12,16 +12,19 @@ function HumburgerMenu() {
       <span className="text-slate-500 text-xl">Logo</span>
       <ul className="hidden md:flex  md:gap-8 lg:gap-25 sm:justify-center sm:items-center">
         <li className="cursor-pointer hidden md:block text-slate-500 text-xl">
-          Home
+          <a className="hover:text-white" href="#home">
+            Home
+          </a>
         </li>
         <li className="cursor-pointer hidden md:block text-slate-500 text-xl">
-          Service
+          <a className="hover:text-white" href="#service">
+            Service
+          </a>
         </li>
         <li className="cursor-pointer hidden md:block text-slate-500 text-xl">
-          Projects
-        </li>
-        <li className="cursor-pointer hidden md:block text-slate-500 text-xl">
-          Contact Me
+          <a className="hover:text-white" href="#projects">
+            Projects
+          </a>
         </li>
       </ul>
       {!isOpen && (
@@ -81,14 +84,6 @@ function HumburgerMenu() {
                 className="block cursor-pointer transition-colors duration-300 ease text-text hover:text-white no-underline"
               >
                 Skills
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block cursor-pointer transition-colors duration-300 ease text-text hover:text-white no-underline"
-              >
-                Contact
               </a>
             </li>
           </ul>
