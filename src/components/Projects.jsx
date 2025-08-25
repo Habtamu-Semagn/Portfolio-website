@@ -7,6 +7,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 function Projects() {
   const [index, setIndex] = useState(0);
+
   const projectImg = [
     { image: Taskmanager, link: "https://taskmanager-habtamu.vercel.app/" },
     { image: MovieListing, link: "www.google.com" },
@@ -17,33 +18,20 @@ function Projects() {
   const handleRight = () => {
     setIndex((index) => (index === projectImg.length - 1 ? 0 : index + 1));
   };
+
   return (
     <div
       id="projects"
-      className="bg-slate-800 px-10 md:px-20 xl:px-30 py-20 flex flex-col flex-wrap gap:25 xl:flex-row"
+      className="bg-slate-800 px-10 md:px-20 xl:px-30 py-20 flex flex-col flex-wrap xl:flex-row"
     >
       <div className="flex flex-wrap justify-between mb-5">
-        <div className="mb-10 lg:mb-15">
+        <div className="mb-3 lg:mb-5">
           <h1 className="text-slate-500 text-xl flex gap-7">
             <span>||</span> <span>Awesome Portfolio</span>{" "}
           </h1>
-          <h2 className="text-white text-4xl md:text-5xl lg:text-6xl mt-15 mb-20 font-serif">
+          <h2 className="text-white text-4xl md:text-5xl lg:text-6xl mt-15 mb-5 sm:mb-20 font-serif">
             My Complete Projects.
           </h2>
-        </div>
-        <div className="justify-center self-end flex gap-10">
-          <button
-            onClick={handleLeft}
-            className="p-10 text-xl border-2 rounded-full text-slate-400 hover:bg-white hover:text-slate-800 cursor-pointer"
-          >
-            <KeyboardDoubleArrowLeftIcon fontSize="inherit" />
-          </button>
-          <button
-            onClick={handleRight}
-            className="p-10 text-xl border-2 rounded-full text-slate-400 hover:bg-white hover:text-slate-800 cursor-pointer"
-          >
-            <KeyboardDoubleArrowRightIcon fontSize="inherit" />
-          </button>
         </div>
       </div>
       <div className="w-full h-full flex relative overflow-hidden">
@@ -53,11 +41,11 @@ function Projects() {
           style={{ translate: `${-100 * index}%` }}
         >
           {projectImg.map((proj) => (
-            <div className="relative w-full shrink-0">
+            <div className="relative w-full h-[250px] sm:h-full shrink-0">
               <img
                 src={proj.image}
                 alt="Taskmanager app"
-                className={`object-contain w-full h-full hover:cursor-pointer`}
+                className={`object-fill w-full h-full hover:cursor-pointer`}
               />
               <a
                 href={proj.link}
@@ -69,11 +57,24 @@ function Projects() {
           ))}
         </div>
       </div>
-      <div className="flex items-center justify-end w-full">
-        {" "}
+      <div className="mt-10 flex w-full relative">
+        <div className=" md:m-auto flex gap-10">
+          <button
+            onClick={handleLeft}
+            className="p-3 sm:p-10 text-xl border-2 rounded-full text-slate-400 hover:bg-white hover:text-slate-800 cursor-pointer"
+          >
+            <KeyboardDoubleArrowLeftIcon fontSize="inherit" />
+          </button>
+          <button
+            onClick={handleRight}
+            className="p-3 sm:p-10 text-xl border-2 rounded-full text-slate-400 hover:bg-white hover:text-slate-800 cursor-pointer"
+          >
+            <KeyboardDoubleArrowRightIcon fontSize="inherit" />
+          </button>
+        </div>{" "}
         <Link
           to={"/projects"}
-          className="my-10 px-10 py-5 font-bold font-xl tracking-widest cursor-pointer bg-slate-800 text-white rounded-full hover:bg-slate-700 transition-colors border-4 border-slate-700"
+          className="absolute top-0 right-0 my-3 px-3 py-2 sm:my-10 sm:px-10 sm:py-5 font-bold font-xl tracking-widest cursor-pointer bg-slate-800 text-white rounded-full hover:bg-slate-700 transition-colors border-4 border-slate-700"
         >
           Details
         </Link>

@@ -4,13 +4,13 @@ import { ErrorElement } from "./components/ErrorElement";
 import Spinner from "./components/Spinner";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
-const Projects = lazy(() => import("./pages/Projects"));
+const Projects = lazy(() => import("./pages/ProjectsPage"));
 
 const router = createBrowserRouter([
   {
     path: "/",
     errorElement: <ErrorElement />,
-    loader: Spinner,
+    HydrateFallback: <Spinner />,
     children: [
       {
         index: true,

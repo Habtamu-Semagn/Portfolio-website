@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
-
+import HomeIcon from "@mui/icons-material/Home";
 const SECTIONS = ["home", "service", "projects"];
 
 function HumburgerMenu() {
@@ -17,7 +17,7 @@ function HumburgerMenu() {
       } else {
         setIsSticky(false);
       }
-    };
+    }; 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -53,7 +53,9 @@ function HumburgerMenu() {
         isSticky ? "fixed top-0 left-0 w-full z-50 shadow-lg" : ""
       } flex justify-between items-center py-8 px-10 bg-slate-900 text-slate-300 text-sm md:px-20 xl:px-30 transition-all duration-300`}
     >
-      <span className="text-slate-500 text-xl">Logo</span>
+      <span className="text-white text-xl flex gap-2">
+        <span className="text-xl font-bold">🚀 Habtamu</span>
+      </span>
       <ul className="hidden md:flex  md:gap-8 lg:gap-25 sm:justify-center sm:items-center">
         {SECTIONS.map((section) => (
           <li

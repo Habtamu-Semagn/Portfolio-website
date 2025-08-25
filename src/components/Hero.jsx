@@ -7,7 +7,7 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import EmailButton from "../components/EmailButton";
 import Button from "../components/Button";
 
-function Home() {
+function Hero() {
   return (
     <div id="home">
       <HumburgerMenu />
@@ -74,4 +74,4 @@ function Home() {
     </div>
   );
 }
-export default Home;
+export default Hero;
