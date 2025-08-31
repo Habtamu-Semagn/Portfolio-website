@@ -1,4 +1,4 @@
-import fastpizza from "../assets/fastpizza.png";
+import fastpizza from "../assets/fastpizza.PNG";
 import SimonGame from "../assets/simongame.png";
 import worldwise from "../assets/worldwise.png";
 import reactquize from "../assets/reactquize.png";
