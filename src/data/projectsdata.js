@@ -1,10 +1,10 @@
 import fastpizza from "../assets/fastpizza.PNG";
-import SimonGame from "../assets/simongame.png";
-import worldwise from "../assets/worldwise.png";
-import reactquize from "../assets/reactquize.png";
+import SimonGame from "../assets/simongame.PNG";
+import worldwise from "../assets/worldwise.PNG";
+import reactquize from "../assets/reactquize.PNG";
 import Taskmanager from "../assets/Taskmanager.png";
-import Popcorn from "../assets/Movielisting.png";
-import Englishdictionary from "../assets/Englishdictionary.png";
+import Popcorn from "../assets/Movielisting.PNG";
+import Englishdictionary from "../assets/Englishdictionary.PNG";
 export const projectInfo = [
   {
     name: "FastPizza",
