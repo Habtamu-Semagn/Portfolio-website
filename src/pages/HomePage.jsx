@@ -3,7 +3,7 @@ import Hero from "../components/Hero";
 import Projects from "../components/Projects";
 import Service from "../components/Service";
 import Skills from "../components/Skills";
-import SpecialSkills from "../components/Specialskills";
+import SpecialSkills from "../components/SpecialSkills";
 
 function HomePage() {
   return (
