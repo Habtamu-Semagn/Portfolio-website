@@ -8,6 +8,16 @@ function SpecialSkills() {
   const [started, setStarted] = useState(false);
   const sectionRef = useRef(null);
 
+  const onButtonClick = () => {
+    const pdfUrl = "frontend_resume.pdf";
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    link.download = "frontend_resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   useEffect(() => {
     const observer = new window.IntersectionObserver(
       ([entry]) => {
@@ -52,7 +62,10 @@ function SpecialSkills() {
         <h2 className="text-white text-4xl md:text-5xl lg:text-6xl mt-15 mb-20 font-serif">
           My Special Skill Field Here.
         </h2>
-        <button className="w-fit self-center md:self-auto border-2 border-slate-500 text-white px-15 py-5 mt-4 rounded-4xl cursor-pointer hover:bg-slate-800 hover:border-slate-800">
+        <button
+          onClick={onButtonClick}
+          className="w-fit self-center md:self-auto border-2 border-slate-500 text-white px-15 py-5 mt-4 rounded-4xl cursor-pointer hover:bg-slate-800 hover:border-slate-800"
+        >
           Get Resume
           <DownloadIcon />
         </button>

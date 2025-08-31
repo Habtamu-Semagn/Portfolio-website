@@ -1,31 +1,13 @@
-import SimonGame from "../assets/simongame.png";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import LaunchIcon from "@mui/icons-material/Launch";
 import ProjectCard from "../components/projectCard";
 import { useNavigate } from "react-router-dom";
+import { projectInfo } from "../data/projectsdata";
 function Projects() {
   let navigate = useNavigate();
   const handleClick = () => {
     navigate(-1);
   };
-  const projectInfo = [
-    {
-      name: "Simon Game",
-      src: SimonGame,
-      link: "https://simon-game-umber-theta.vercel.app/",
-      description:
-        "Simon Game is a classic memory game that challenges players to remember and replicate sequences of colors and sounds. The game starts with a single color, and with each successful round, an additional color is added to the sequence. Players must click the colors in the correct order to progress. The game tests memory skills and concentration, providing an engaging and fun experience for users of all ages.",
-      technologies: ["HTML", "CSS", "JavaScript", "JQuery"],
-    },
-    {
-      name: "Simon Game",
-      src: SimonGame,
-      link: "https://simon-game-umber-theta.vercel.app/",
-      description:
-        "Simon Game is a classic memory game that challenges players to remember and replicate sequences of colors and sounds. The game starts with a single color, and with each successful round, an additional color is added to the sequence. Players must click the colors in the correct order to progress. The game tests memory skills and concentration, providing an engaging and fun experience for users of all ages.",
-      technologies: ["HTML", "CSS", "JavaScript", "JQuery"],
-    },
-  ];
+
   return (
     <div className="px-3 sm:px-10 md:px-20 xl:px-30 py-20 bg-slate-800">
       <span
@@ -54,21 +36,3 @@ function Projects() {
   );
 }
 export default Projects;
-{
-  /* <div className="flex flex-wrap gap-10 xl:gap-20 text-white">
-  <div className="relative shrink-0">
-    <img
-      src={SimonGame}
-      alt="Taskmanager app"
-      className={`object-fill w-full h-full hover:cursor-pointer`}
-    />
-    <a
-      href={"https://simon-game-umber-theta.vercel.app/"}
-      className="absolute inset-0 flex justify-center items-center bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300"
-    >
-      <LaunchIcon fontSize="large" />
-    </a>
-  </div>
-  <div className="bg-slate-900 px-10 md:30 py-15 grow-1 lg:w-100"></div>
-</div> */
-}

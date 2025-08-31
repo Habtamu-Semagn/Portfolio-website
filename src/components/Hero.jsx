@@ -8,6 +8,15 @@ import EmailButton from "../components/EmailButton";
 import Button from "../components/Button";
 
 function Hero() {
+  const onButtonClick = () => {
+    const pdfUrl = "frontend_resume.pdf";
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    link.download = "frontend_resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
     <div id="home">
       <HumburgerMenu />
@@ -21,7 +30,10 @@ function Hero() {
             <h2 className="text-2xl text-slate-400 mb-6">
               Frontend Developer specializing in React
             </h2>
-            <button className="w-fit self-center md:self-auto border-2 border-slate-500 text-white px-15 py-5 mt-4 rounded-4xl cursor-pointer hover:bg-slate-800 hover:border-slate-800">
+            <button
+              onClick={onButtonClick}
+              className="w-fit self-center md:self-auto border-2 border-slate-500 text-white px-15 py-5 mt-4 rounded-4xl cursor-pointer hover:bg-slate-800 hover:border-slate-800 animate-pulse"
+            >
               Get Resume
               <DownloadIcon />
             </button>
@@ -59,7 +71,7 @@ function Hero() {
                   </Button>
                 </a>
                 <a
-                  href="https://twitter.com"
+                  href="https://t.me/hab435"
                   className="col-start-3 row-start-3 flex justify-end items-end p-2"
                 >
                   <Button>

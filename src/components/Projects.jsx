@@ -1,22 +1,17 @@
-import Taskmanager from "../assets/Taskmanager.png";
-import MovieListing from "../assets/MovieListing.PNG";
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import LaunchIcon from "@mui/icons-material/Launch";
+import { projectInfo } from "../data/projectsdata";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 function Projects() {
   const [index, setIndex] = useState(0);
 
-  const projectImg = [
-    { image: Taskmanager, link: "https://taskmanager-habtamu.vercel.app/" },
-    { image: MovieListing, link: "www.google.com" },
-  ];
   const handleLeft = () => {
-    setIndex((index) => (index === 0 ? projectImg.length - 1 : index - 1));
+    setIndex((index) => (index === 0 ? projectInfo.length - 1 : index - 1));
   };
   const handleRight = () => {
-    setIndex((index) => (index === projectImg.length - 1 ? 0 : index + 1));
+    setIndex((index) => (index === projectInfo.length - 1 ? 0 : index + 1));
   };
 
   return (
@@ -34,16 +29,16 @@ function Projects() {
           </h2>
         </div>
       </div>
-      <div className="w-full h-full flex relative overflow-hidden">
+      <div className="w-full h-full  md:h-[500px] flex relative overflow-hidden">
         {/* slider component */}
         <div
           className="flex transition-transform delay-300 ease-out"
           style={{ translate: `${-100 * index}%` }}
         >
-          {projectImg.map((proj) => (
+          {projectInfo.map((proj) => (
             <div className="relative w-full h-[250px] sm:h-full shrink-0">
               <img
-                src={proj.image}
+                src={proj.src}
                 alt="Taskmanager app"
                 className={`object-fill w-full h-full hover:cursor-pointer`}
               />
@@ -74,7 +69,7 @@ function Projects() {
         </div>{" "}
         <Link
           to={"/projects"}
-          className="absolute top-0 right-0 my-3 px-3 py-2 sm:my-10 sm:px-10 sm:py-5 font-bold font-xl tracking-widest cursor-pointer bg-slate-800 text-white rounded-full hover:bg-slate-700 transition-colors border-4 border-slate-700"
+          className="absolute top-0 right-0 my-3 px-3 py-2 sm:my-10 sm:px-10 sm:py-5 font-bold font-xl tracking-widest cursor-pointer  text-white rounded-full bg-emerald-500 hover:bg-emerald-600 transition-colors border-4 border-slate-700" //bg-slate-800
         >
           Details
         </Link>

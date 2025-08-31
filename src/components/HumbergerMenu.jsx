@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
-import HomeIcon from "@mui/icons-material/Home";
 const SECTIONS = ["home", "service", "projects"];
 
 function HumburgerMenu() {
@@ -8,16 +7,21 @@ function HumburgerMenu() {
   const [activeSection, setActiveSection] = useState("home");
   const [isSticky, setIsSticky] = useState(false);
 
+  const onHireMe = () => {
+    window.open(
+      "https://mail.google.com/mail/?view=cm&fs=1&to=habtamusemagn1@gmail.com&su=Hire%20Me&body=Hello%20Habtamu,",
+      "_blank"
+    );
+  };
   // Sticky logic
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
-        // Change 100 to your desired threshold
         setIsSticky(true);
       } else {
         setIsSticky(false);
       }
-    }; 
+    };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -60,18 +64,25 @@ function HumburgerMenu() {
         {SECTIONS.map((section) => (
           <li
             key={section}
+            onClick={() => {
+              const el = document.getElementById(section);
+              if (el) el.scrollIntoView({ behavior: "smooth" });
+            }}
             className={`cursor-pointer hidden md:block text-xl ${
               activeSection === section ? "text-white" : "text-slate-500"
             }`}
           >
-            <a className="hover:text-white" href={`#${section}`}>
+            <a className="hover:text-white">
               {section.charAt(0).toUpperCase() + section.slice(1)}
             </a>
           </li>
         ))}
       </ul>
       {!isOpen && (
-        <button className="cursor-pointer font-bold text-white text-xl border-2 border-slate-300 md:px-4 lg:px-7 py-3 rounded-3xl hidden md:flex lg:gap-3 hover:bg-slate-800 hover:border-slate-800">
+        <button
+          onClick={onHireMe}
+          className="hire-me-btn cursor-pointer font-bold text-white text-xl border-2 border-slate-300 md:px-4 lg:px-7 py-3 rounded-3xl hidden md:flex lg:gap-3 hover:bg-slate-800 hover:border-slate-800"
+        >
           <span>Hire Me</span>
           <KeyboardDoubleArrowRightIcon />
         </button>
@@ -102,9 +113,9 @@ function HumburgerMenu() {
       </div>
       {isOpen && (
         <div
-          className={`fixed right-0 top-0 h-full bg-slate-800 text-text p-4 w-64 sm:w-72 shadow-[0_4px_6px_-2px_rgba(0,0,0,0.3)] z-40 sm:top-16`}
+          className={`fixed right-0 top-0 h-full w-full bg-slate-800 text-text p-4 shadow-[0_4px_6px_-2px_rgba(0,0,0,0.3)] z-40`}
         >
-          <ul className="tracking-widest space-y-5 md:flex">
+          <ul className="tracking-widest flex flex-col space-y-10 items-center pt-40">
             {SECTIONS.map((section) => (
               <li
                 key={section}

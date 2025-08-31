@@ -1,12 +1,12 @@
 import LaunchIcon from "@mui/icons-material/Launch";
 function ProjectCard({ name, src, link, description, technologies = [] }) {
   return (
-    <div className="flex flex-wrap lg:flex-nowrap gap-10 xl:gap-20 text-white mt-10 mb-10 bg-slate-900 p-5 sm:p-10">
-      <div className="relative flex lg:w-400 lg:h-100">
+    <div className="flex flex-wrap lg:flex-row gap-10 xl:gap-20 text-white mt-10 mb-10 bg-slate-900 p-5 sm:p-10">
+      <div className="relative flex lg:w-100 lg:h-100">
         <img
           src={src}
           alt={name}
-          className={`object-fill w-full h-full hover:cursor-pointer grow-1`}
+          className={`object-cover w-full h-full hover:cursor-pointer grow-1`}
         />
         <a
           href={link}
@@ -15,7 +15,7 @@ function ProjectCard({ name, src, link, description, technologies = [] }) {
           <LaunchIcon fontSize="large" />
         </a>
       </div>
-      <div className="bg-slate-900  grow-1 flex flex-col  h-full">
+      <div className="bg-slate-900  grow-1 flex-1 flex-col  h-full">
         <h3 className="text-2xl font-bold text-teal-400 mb-4">{name}</h3>
 
         <p className="text-slate-300 mb-6 leading-relaxed text-justify text-sm ">
